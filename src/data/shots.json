@@ -1,0 +1,817 @@
+{
+ "_note": "P1 (Opus): 02b cut (03 starts 3.15, boat 0.824->1.6 keeps s at 7.5), reframed 04/05/07/18, spray veil 33.5 capped (max .8, in .2 out .26). Stage E3 (from D1): shot 2 split into 2a/2b; reframed 3, 8, 9, 10, 13, 15, 17 (generator: ride/qa/e3/patch_E3.py). Stage D1: 18 shots of SHOTS.md (see src/camera.js header for fields; size = framing target). hero[] = Tripo preset clips only (see src/hero.js).",
+ "shots": [
+  {
+   "name": "01_hook_hull",
+   "t0": 0,
+   "t1": 2.2,
+   "world": "marsh",
+   "lens": 35,
+   "fstop": 4,
+   "space": "boat",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      3.6,
+      0.32,
+      -3.4
+     ],
+     "q": [
+      0,
+      0.8,
+      0.3
+     ]
+    },
+    {
+     "u": 1,
+     "p": [
+      3.35,
+      0.32,
+      -3.1
+     ],
+     "q": [
+      0,
+      0.8,
+      0.3
+     ]
+    }
+   ],
+   "boat": {
+    "s0": 22,
+    "speed": 0.35
+   },
+   "focus": "boat",
+   "sway": 0.006,
+   "size": "hull 60% width, she hidden (TL.heroIn)"
+  },
+  {
+   "name": "02a_lantern_macro",
+   "t0": 2.2,
+   "t1": 3.15,
+   "world": "marsh",
+   "lens": 85,
+   "fstop": 2.8,
+   "space": "boat",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      2.7,
+      1.3,
+      0.2
+     ],
+     "q": [
+      0,
+      1.38,
+      1.92
+     ]
+    },
+    {
+     "u": 1,
+     "p": [
+      2.66,
+      1.31,
+      0.26
+     ],
+     "q": [
+      0,
+      1.38,
+      1.92
+     ]
+    }
+   ],
+   "boat": {
+    "speed": 0.35,
+    "speed1": 0.7
+   },
+   "focus": "lantern",
+   "sway": 0.003,
+   "size": "lantern + ring sharp, stem behind"
+  },
+  {
+   "name": "03_marsh_glide",
+   "t0": 3.15,
+   "t1": 7.5,
+   "world": "marsh",
+   "lens": 24,
+   "fstop": 5.6,
+   "space": "boat",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      -4.9,
+      1.0,
+      0.5
+     ],
+     "q": [
+      0,
+      1.2,
+      1.0
+     ]
+    },
+    {
+     "u": 1,
+     "p": [
+      -4.9,
+      1.0,
+      0.1
+     ],
+     "q": [
+      0,
+      1.2,
+      0.6
+     ]
+    }
+   ],
+   "boat": {
+    "speed": 0.824,
+    "speed1": 1.6
+   },
+   "size": ">=1/3 centre-left"
+  },
+  {
+   "name": "04_over_shoulder",
+   "t0": 7.5,
+   "t1": 10.0,
+   "world": "marsh",
+   "lens": 65,
+   "fstop": 2.8,
+   "space": "boat",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      2.6,
+      1.6,
+      0.6
+     ],
+     "q": [
+      -0.4,
+      1.55,
+      -0.3
+     ]
+    },
+    {
+     "u": 1,
+     "p": [
+      2.65,
+      1.6,
+      0.8
+     ],
+     "q": [
+      -0.4,
+      1.55,
+      -0.1
+     ]
+    }
+   ],
+   "boat": {
+    "speed": 1.6
+   },
+   "size": "waist up, right third"
+  },
+  {
+   "name": "05_high_rear",
+   "t0": 10.0,
+   "t1": 12.0,
+   "world": "marsh",
+   "lens": 50,
+   "fstop": 5.6,
+   "space": "lock",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      0.6,
+      5.0,
+      21
+     ],
+     "q": [
+      0,
+      1.0,
+      -15
+     ]
+    },
+    {
+     "u": 1,
+     "p": [
+      0.6,
+      5.6,
+      21
+     ],
+     "q": [
+      0,
+      1.0,
+      -15
+     ]
+    }
+   ],
+   "boat": {
+    "speed": 1.6
+   },
+   "size": "1/4 from behind"
+  },
+  {
+   "name": "06_arch_epic",
+   "t0": 12.0,
+   "t1": 15.0,
+   "world": "ruins",
+   "lens": 20,
+   "fstop": 8,
+   "space": "lock",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      -13,
+      0.7,
+      -1.5
+     ],
+     "q": [
+      0,
+      4.5,
+      4.5
+     ]
+    }
+   ],
+   "boat": {
+    "s0": 14,
+    "speed": 1.6
+   },
+   "lockU": 0.5,
+   "sway": 0,
+   "size": "EPIC 1/8, boat lower-left moving right"
+  },
+  {
+   "name": "07_look_up_arches",
+   "t0": 15.0,
+   "t1": 18.0,
+   "world": "ruins",
+   "lens": 65,
+   "fstop": 4,
+   "space": "boat",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      -4.5,
+      1.0,
+      10
+     ],
+     "q": [
+      4.0,
+      2.3,
+      -18.8
+     ]
+    },
+    {
+     "u": 1,
+     "p": [
+      -4.6,
+      1.0,
+      10.6
+     ],
+     "q": [
+      4.0,
+      2.3,
+      -18.8
+     ]
+    }
+   ],
+   "boat": {
+    "speed": 1.6
+   },
+   "size": "knees up, centre"
+  },
+  {
+   "name": "08_drowned_steps",
+   "t0": 18.0,
+   "t1": 20.0,
+   "world": "ruins",
+   "lens": 35,
+   "fstop": 5.6,
+   "space": "boat",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      -5.6,
+      3.7,
+      4.4
+     ],
+     "q": [
+      0,
+      0.6,
+      -0.5
+     ]
+    },
+    {
+     "u": 1,
+     "p": [
+      -5.4,
+      3.1,
+      4.1
+     ],
+     "q": [
+      0,
+      0.7,
+      -0.3
+     ]
+    }
+   ],
+   "boat": {
+    "speed": 1.6
+   },
+   "size": ">=1/3 centre, high side"
+  },
+  {
+   "name": "09_grotto_ahead",
+   "t0": 20.0,
+   "t1": 23.0,
+   "world": "grotto",
+   "lens": 28,
+   "fstop": 4,
+   "space": "boat",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      -2.8,
+      1.0,
+      3.6
+     ],
+     "q": [
+      0,
+      1.3,
+      -0.3
+     ]
+    },
+    {
+     "u": 1,
+     "p": [
+      -2.8,
+      1.0,
+      3.4
+     ],
+     "q": [
+      0,
+      1.3,
+      -0.3
+     ]
+    }
+   ],
+   "boat": {
+    "s0": 14,
+    "speed": 1.6
+   },
+   "size": ">=1/3 centre, toward camera"
+  },
+  {
+   "name": "10_face_look_up",
+   "t0": 23.0,
+   "t1": 25.5,
+   "world": "grotto",
+   "lens": 85,
+   "fstop": 2,
+   "space": "boat",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      -1.6,
+      1.84,
+      1.5
+     ],
+     "q": [
+      0.15,
+      1.74,
+      -0.17
+     ]
+    },
+    {
+     "u": 1,
+     "p": [
+      -1.6,
+      1.84,
+      1.56
+     ],
+     "q": [
+      0.15,
+      1.76,
+      -0.15
+     ]
+    }
+   ],
+   "boat": {
+    "speed": 1.6
+   },
+   "sway": 0.005,
+   "size": "face 1/2, 3/4 front-right, bow behind"
+  },
+  {
+   "name": "11_grotto_wide",
+   "t0": 25.5,
+   "t1": 28.0,
+   "world": "grotto",
+   "lens": 24,
+   "fstop": 4,
+   "space": "boat",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      -8.0,
+      0.5,
+      -1.4
+     ],
+     "q": [
+      0,
+      1.2,
+      -0.6
+     ]
+    },
+    {
+     "u": 1,
+     "p": [
+      -8.0,
+      0.55,
+      0.6
+     ],
+     "q": [
+      0,
+      1.2,
+      1.0
+     ]
+    }
+   ],
+   "boat": {
+    "speed": 1.6
+   },
+   "size": "1/4 centre"
+  },
+  {
+   "name": "12_gorge_crane",
+   "t0": 28.0,
+   "t1": 31.0,
+   "world": "gorge",
+   "lens": 24,
+   "fstop": 5.6,
+   "space": "boat",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      0.5,
+      3.2,
+      -8.2
+     ],
+     "q": [
+      0,
+      2.6,
+      6
+     ]
+    },
+    {
+     "u": 1,
+     "p": [
+      0.4,
+      1.5,
+      -7.8
+     ],
+     "q": [
+      0,
+      2.0,
+      6
+     ]
+    }
+   ],
+   "boat": {
+    "s0": 14,
+    "speed": 1.6
+   },
+   "size": "1/4 lower centre from behind"
+  },
+  {
+   "name": "13_gorge_side",
+   "t0": 31.0,
+   "t1": 33.5,
+   "world": "gorge",
+   "lens": 65,
+   "fstop": 2.8,
+   "space": "boat",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      -3.4,
+      1.0,
+      1.35
+     ],
+     "q": [
+      0.1,
+      1.5,
+      -0.12
+     ]
+    },
+    {
+     "u": 1,
+     "p": [
+      -3.4,
+      1.0,
+      1.5
+     ],
+     "q": [
+      0.1,
+      1.5,
+      0
+     ]
+    }
+   ],
+   "boat": {
+    "speed": 1.6
+   },
+   "size": "thighs up, front side, stern out of frame"
+  },
+  {
+   "name": "14_still_lake",
+   "t0": 33.5,
+   "t1": 35.5,
+   "world": "finale",
+   "lens": 24,
+   "fstop": 4,
+   "space": "boat",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      -3.0,
+      0.8,
+      -5.4
+     ],
+     "q": [
+      0,
+      3.2,
+      4
+     ]
+    }
+   ],
+   "boat": {
+    "s0": 34.4,
+    "speed": 1.6,
+    "speed1": 0
+   },
+   "sway": 0.004,
+   "size": "1/3 left third from behind, tree right third (tree at z 55)"
+  },
+  {
+   "name": "15_bow_lift",
+   "t0": 35.5,
+   "t1": 37.5,
+   "world": "finale",
+   "lens": 85,
+   "fstop": 8,
+   "space": "boat",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      2.8,
+      1.7,
+      0.35
+     ],
+     "q": [
+      0,
+      1.62,
+      -0.05
+     ]
+    },
+    {
+     "u": 1,
+     "p": [
+      2.8,
+      1.8,
+      0.35
+     ],
+     "q": [
+      0,
+      1.67,
+      -0.05
+     ]
+    }
+   ],
+   "boat": {
+    "speed": 0
+   },
+   "sway": 0.004,
+   "size": "face right third, bow rises left third beside her"
+  },
+  {
+   "name": "16_arrow_side",
+   "t0": 37.5,
+   "t1": 39.0,
+   "world": "finale",
+   "lens": 24,
+   "fstop": 5.6,
+   "space": "boat",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      -7,
+      1.0,
+      -5.5
+     ],
+     "q": [
+      0.5,
+      3.6,
+      9.8
+     ]
+    }
+   ],
+   "boat": {
+    "speed": 0
+   },
+   "sway": 0,
+   "size": "1/4 left edge, tree right (tree at z 55)"
+  },
+  {
+   "name": "17_bloom_epic",
+   "t0": 39.0,
+   "t1": 41.5,
+   "world": "finale",
+   "lens": 20,
+   "fstop": 8,
+   "space": "tree",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      -8,
+      6.5,
+      -58
+     ],
+     "q": [
+      0,
+      9.4,
+      0
+     ]
+    }
+   ],
+   "boat": {
+    "speed": 0
+   },
+   "sway": 0,
+   "focus": [
+    0,
+    14,
+    0
+   ],
+   "size": "EPIC tree 70%, symmetric, horizon 55%"
+  },
+  {
+   "name": "18_end_card",
+   "t0": 41.5,
+   "t1": 45.0,
+   "world": "finale",
+   "lens": 18,
+   "fstop": 5.6,
+   "space": "boat",
+   "keys": [
+    {
+     "u": 0,
+     "p": [
+      -7.5,
+      1.6,
+      -6.0
+     ],
+     "q": [
+      3.8,
+      4.2,
+      8
+     ]
+    },
+    {
+     "u": 1,
+     "p": [
+      -7.8,
+      1.6,
+      -6.0
+     ],
+     "q": [
+      3.5,
+      4.2,
+      8
+     ]
+    }
+   ],
+   "boat": {
+    "speed": 0
+   },
+   "sway": 0.003,
+   "size": "1/4 lower-left from behind, tree right half (tree at z 55)"
+  }
+ ],
+ "veils": [
+  {
+   "t": 12.0,
+   "color": "#F2CF94",
+   "in": 0.55,
+   "out": 0.55
+  },
+  {
+   "t": 20.0,
+   "color": "#0E3A4A",
+   "in": 0.45,
+   "out": 0.5
+  },
+  {
+   "t": 28.0,
+   "color": "#7a1e12",
+   "in": 0.22,
+   "out": 0.2
+  },
+  {
+   "t": 33.5,
+   "color": "#F4E6D8",
+   "in": 0.2,
+   "out": 0.26,
+   "max": 0.8
+  }
+ ],
+ "hero": [
+  {
+   "t": 0,
+   "clip": "idle",
+   "from": 0
+  },
+  {
+   "t": 7.2,
+   "clip": "look_around",
+   "rate": 0.8,
+   "fade": 0.5,
+   "from": 7.4
+  },
+  {
+   "t": 12.6,
+   "clip": "idle",
+   "fade": 0.8,
+   "from": 6.5
+  },
+  {
+   "t": 14.4,
+   "clip": "standing_relax",
+   "rate": 0.8,
+   "fade": 0.6,
+   "from": 8.8
+  },
+  {
+   "t": 19.4,
+   "clip": "idle",
+   "fade": 0.6,
+   "from": 8.0
+  },
+  {
+   "t": 22.7,
+   "clip": "look_around",
+   "rate": 0.6,
+   "fade": 0.3,
+   "from": 12.55
+  },
+  {
+   "t": 26.2,
+   "clip": "idle",
+   "fade": 0.8,
+   "from": 10.0
+  },
+  {
+   "t": 30.4,
+   "clip": "standing_relax",
+   "rate": 1.0,
+   "fade": 0.6,
+   "from": 12.6
+  },
+  {
+   "t": 33.2,
+   "clip": "idle",
+   "rate": 0.8,
+   "fade": 0.6,
+   "from": 0.5
+  },
+  {
+   "t": 35.2,
+   "clip": "look_around",
+   "rate": 0.4,
+   "fade": 0.3,
+   "from": 12.3
+  },
+  {
+   "t": 41.0,
+   "clip": "look_around",
+   "rate": 0.3,
+   "fade": 0.5,
+   "from": 12.6
+  }
+ ]
+}

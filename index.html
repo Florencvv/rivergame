@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>The Waking River</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Sail the Waking River: steer a leaf boat through four sleeping worlds that wake as you pass.">
+<link rel="preload" href="fonts/CormorantGaramond-VF.ttf" as="font" type="font/ttf" crossorigin>
+<style>
+@font-face{font-family:"Cormorant Garamond";src:url(fonts/CormorantGaramond-VF.ttf) format("truetype");font-weight:300 700;font-display:block}
+:root{--ink:#fff6e0;--gold:#ffd88a;--dim:rgba(255,246,224,.62)}
+html,body{margin:0;height:100%;background:#0c0a08;overflow:hidden;touch-action:none;-webkit-user-select:none;user-select:none}
+body{font-family:"Cormorant Garamond",Georgia,serif;color:var(--ink);font-feature-settings:"lnum" 1,"kern" 1}
+canvas{position:fixed;inset:0;width:100vw;height:100vh;display:block;outline:none}
+.layer{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;transition:opacity .9s ease}
+.hidden{opacity:0!important;pointer-events:none!important}
+#loading{background:#0c0a08;z-index:5}
+#loading .name{font-size:clamp(28px,4.4vw,56px);font-weight:400;letter-spacing:.06em;opacity:.92}
+#loading .bar{width:min(320px,60vw);height:1px;background:rgba(255,246,224,.16);margin-top:26px;position:relative;overflow:hidden}
+#loading .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--gold);box-shadow:0 0 10px var(--gold);transition:width .25s linear}
+#loading .note{margin-top:14px;font-size:15px;letter-spacing:.14em;color:var(--dim);font-style:italic}
+#title{z-index:4;cursor:pointer;pointer-events:auto;justify-content:flex-start;padding-top:9vh;box-sizing:border-box;background:linear-gradient(180deg,rgba(40,24,4,.32) 0%,rgba(40,24,4,0) 42%),radial-gradient(ellipse at 50% 50%,rgba(20,12,0,0) 40%,rgba(20,12,0,.3) 100%)}
+#title h1{margin:0;font-weight:500;font-size:clamp(44px,8.4vw,128px);letter-spacing:.04em;line-height:1;text-shadow:0 0 30px rgba(255,214,140,.55),0 2px 18px rgba(60,30,0,.45)}
+#title .go{margin-top:3.2vh;font-size:clamp(17px,1.9vw,26px);letter-spacing:.22em;font-style:italic;color:var(--ink);opacity:.9;animation:breathe 2.8s ease-in-out infinite;text-shadow:0 0 14px rgba(255,214,140,.6),0 1px 10px rgba(60,30,0,.6)}
+#title .keys{position:absolute;bottom:5vh;font-size:clamp(13px,1.2vw,16px);letter-spacing:.12em;color:var(--dim);text-align:center;line-height:1.7;text-shadow:0 0 8px rgba(0,0,0,.4)}
+@keyframes breathe{0%,100%{opacity:.55}50%{opacity:1}}
+#hud{z-index:3;justify-content:flex-start;align-items:flex-end;padding:22px 28px;box-sizing:border-box}
+#count{font-size:clamp(17px,1.6vw,22px);letter-spacing:.1em;text-shadow:0 0 10px rgba(0,0,0,.45),0 0 18px rgba(255,214,140,.35);display:flex;align-items:center;gap:10px;transition:transform .25s ease}
+#count .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px 2px rgba(255,216,138,.8)}
+#count.pop{transform:scale(1.18)}
+#camlabel{position:fixed;left:28px;bottom:22px;font-size:16px;letter-spacing:.16em;font-style:italic;color:var(--ink);opacity:0;transition:opacity .6s ease;text-shadow:0 0 10px rgba(0,0,0,.5);z-index:3;pointer-events:none}
+#pause{z-index:4;background:rgba(10,8,6,.45);pointer-events:auto;cursor:pointer}
+#pause .big{font-size:clamp(34px,5vw,64px);font-weight:500;letter-spacing:.06em}
+#pause .small{margin-top:14px;font-size:16px;letter-spacing:.16em;font-style:italic;color:var(--dim)}
+#end{z-index:4;display:block}
+#end .stats{position:absolute;transform:translate(-50%,0);font-size:clamp(16px,1.9vw,26px);letter-spacing:.14em;color:var(--ink);text-shadow:0 0 12px rgba(255,214,140,.55);white-space:nowrap;text-align:center}
+#end .again{position:absolute;transform:translate(-50%,0);font-size:clamp(15px,1.5vw,20px);letter-spacing:.24em;font-style:italic;color:var(--ink);pointer-events:auto;cursor:pointer;opacity:.85;padding:8px 16px;border-bottom:1px solid rgba(255,216,138,.45);text-shadow:0 0 10px rgba(255,214,140,.5)}
+#end .again:hover{opacity:1;border-bottom-color:var(--gold)}
+#err{z-index:9;background:#0c0a08;font-size:18px;letter-spacing:.06em;padding:0 10vw;text-align:center;line-height:1.6}
+</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head><body>
+<canvas id="c" tabindex="0"></canvas>
+<div id="loading" class="layer"><div class="name">The Waking River</div><div class="bar"><div class="fill" id="fill"></div></div><div class="note" id="note">gathering the river</div></div>
+<div id="title" class="layer hidden"><h1>The Waking River</h1><div class="go" id="go">click to set sail</div>
+  <div class="keys" id="keys">A / D or arrows to steer &middot; drag to look around &middot; C film camera &middot; P pause</div></div>
+<div id="hud" class="layer hidden"><div id="count"><span class="dot"></span><span id="n">0 / 26</span></div></div>
+<div id="camlabel"></div>
+<div id="pause" class="layer hidden"><div class="big">Paused</div><div class="small" id="resume">press P or click to sail on</div></div>
+<div id="end" class="layer hidden"><div class="stats" id="stats"></div><div class="again" id="again">sail again</div></div>
+<div id="err" class="layer hidden"></div>
+<script type="module" src="./src/main.js"></script>
+</body></html>

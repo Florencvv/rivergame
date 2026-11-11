@@ -1,0 +1,41 @@
+{
+ "fps": 60,
+ "frames": 2700,
+ "seconds": 45,
+ "_note": "events in seconds (stage D1)",
+ "boatReveal": [
+  0.2,
+  2.0
+ ],
+ "lanternOn": [
+  2.6,
+  3.1
+ ],
+ "heroIn": 2.2,
+ "bowLift": [
+  35.7,
+  37.1
+ ],
+ "bowSink": [
+  41.9,
+  44.6
+ ],
+ "bowFade": [
+  42.6,
+  44.8
+ ],
+ "finale": {
+  "arrow": [
+   37.75,
+   38.9
+  ],
+  "bloom": [
+   39.0,
+   42.5
+  ]
+ },
+ "endCard": [
+  41.7,
+  42.3
+ ]
+}
